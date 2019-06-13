@@ -515,14 +515,14 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
   if (self.titleIconImageView != nil) {
     // match the titleIcon alignment to the title alignment
     CGFloat titleIconPosition = titleFrame.origin.x;
-    if (self.titleAlignment == NSTextAlignmentCenter) {
+//    if (self.titleAlignment == NSTextAlignmentCenter) {
       titleIconPosition = (contentSize.width - titleIconSize.width) / 2;
-    } else if (self.titleAlignment == NSTextAlignmentRight ||
-               (self.titleAlignment == NSTextAlignmentNatural &&
-                [self mdf_effectiveUserInterfaceLayoutDirection] ==
-                    UIUserInterfaceLayoutDirectionRightToLeft)) {
-      titleIconPosition = CGRectGetMaxX(titleFrame) - titleIconSize.width;
-    }
+//    } else if (self.titleAlignment == NSTextAlignmentRight ||
+//               (self.titleAlignment == NSTextAlignmentNatural &&
+//                [self mdf_effectiveUserInterfaceLayoutDirection] ==
+//                    UIUserInterfaceLayoutDirectionRightToLeft)) {
+//      titleIconPosition = CGRectGetMaxX(titleFrame) - titleIconSize.width;
+//    }
     CGRect titleIconFrame = CGRectMake(titleIconPosition, MDCDialogContentInsets.top,
                                        titleIconSize.width, titleIconSize.height);
     self.titleIconImageView.frame = titleIconFrame;
