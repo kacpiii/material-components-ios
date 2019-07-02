@@ -265,7 +265,7 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
 }
 
 - (void)setButtonFont:(UIFont *)font {
-  _buttonFont = font;
+  _buttonFont = [UIFont fontWithName:@"OpenSans-Bold" size:16.0];
 
   [self updateButtonFont];
 }

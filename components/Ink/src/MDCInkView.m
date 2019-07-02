@@ -186,7 +186,7 @@
 
 - (void)startTouchBeganAnimationAtPoint:(CGPoint)point
                              completion:(MDCInkCompletionBlock)completionBlock {
-  [self startTouchBeganAtPoint:point animated:YES withCompletion:completionBlock];
+  [self startTouchBeganAtPoint:point animated:NO withCompletion:completionBlock];
 }
 
 - (void)startTouchBeganAtPoint:(CGPoint)point

@@ -204,9 +204,9 @@ static NSString *const kMaterialDialogsBundle = @"MaterialDialogs.bundle";
 
 // b/117717380: Will be deprecated
 - (void)setButtonFont:(UIFont *)buttonFont {
-  _buttonFont = buttonFont;
+  _buttonFont = [UIFont fontWithName:@"OpenSans-Bold" size:16.0];
   if (self.alertView) {
-    self.alertView.buttonFont = buttonFont;
+    self.alertView.buttonFont = [UIFont fontWithName:@"OpenSans-Bold" size:16.0];
   }
 }
 

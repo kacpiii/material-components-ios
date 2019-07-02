@@ -18,11 +18,11 @@
 #import "MaterialShadowLayer.h"
 #import "private/MDCDialogShadowedView.h"
 
-static CGFloat MDCDialogMinimumWidth = 280;
+static CGFloat MDCDialogMinimumWidth = 300;
 // TODO: Spec indicates 40 side margins and 280 minimum width.
 // That is incompatible with a 320 wide device.
 // Side margins set to 20 until we have a resolution
-static UIEdgeInsets MDCDialogEdgeInsets = {24, 20, 24, 20};
+static UIEdgeInsets MDCDialogEdgeInsets = {24, 10, 24, 10};
 
 @interface MDCDialogPresentationController ()
 
@@ -88,7 +88,7 @@ static UIEdgeInsets MDCDialogEdgeInsets = {24, 20, 24, 20};
     useDialogCornerRadius = NO;
 
     _dimmingView = [[UIView alloc] initWithFrame:CGRectZero];
-    _dimmingView.backgroundColor = [UIColor colorWithWhite:0 alpha:(CGFloat)0.32];
+    _dimmingView.backgroundColor = [UIColor colorWithWhite:0 alpha:(CGFloat)0.60];
     _dimmingView.alpha = 0;
     _dismissGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                         action:@selector(dismiss:)];
