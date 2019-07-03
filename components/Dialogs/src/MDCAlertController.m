@@ -246,6 +246,10 @@ static NSString *const kMaterialDialogsBundle = @"MaterialDialogs.bundle";
   }
 }
 
+- (void)setIsHeadphonesStatsAlert:(BOOL)isStatsAlert {
+    _isHeadphonesStatsAlert = isStatsAlert;
+}
+
 - (void)setTitleIconTintColor:(UIColor *)titleIconTintColor {
   _titleIconTintColor = titleIconTintColor;
   if (self.alertView) {
@@ -389,6 +393,11 @@ static NSString *const kMaterialDialogsBundle = @"MaterialDialogs.bundle";
     // Avoid reset ink color to white when setting it to nil. only set it for an actual UIColor.
     self.alertView.buttonInkColor = self.buttonInkColor;  // b/117717380: Will be deprecated
   }
+    
+  if (self.isHeadphonesStatsAlert) {
+    self.alertView.isHeadphonesStatsAlert = self.isHeadphonesStatsAlert;
+  }
+    
   self.alertView.titleAlignment = self.titleAlignment;
   self.alertView.titleIcon = self.titleIcon;
   self.alertView.titleIconTintColor = self.titleIconTintColor;

@@ -16,6 +16,7 @@
 
 @interface MDCAlertControllerView : UIView
 
+@property(nonatomic, assign) BOOL isHeadphonesStatsAlert;
 @property(nonatomic, strong, nullable) UIFont *titleFont UI_APPEARANCE_SELECTOR;
 @property(nonatomic, strong, nullable) UIColor *titleColor UI_APPEARANCE_SELECTOR;
 

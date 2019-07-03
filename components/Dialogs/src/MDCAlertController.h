@@ -50,6 +50,8 @@
 /** Alert controllers must be created with alertControllerWithTitle:message: */
 - (nullable instancetype)initWithCoder:(nonnull NSCoder *)aDecoder NS_UNAVAILABLE;
 
+@property(nonatomic, assign) BOOL isHeadphonesStatsAlert;
+
 /** The font applied to the title of Alert Controller.*/
 @property(nonatomic, strong, nullable) UIFont *titleFont;
 
