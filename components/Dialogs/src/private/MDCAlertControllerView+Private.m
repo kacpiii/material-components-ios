@@ -513,11 +513,6 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
   self.messageLabel.frame = messageFrame;
 
   if (self.titleIconImageView != nil) {
-    CGFloat titleTopMargin = MDCDialogContentInsets.top;
-    if (self.isHeadphonesStatsAlert) {
-      titleTopMargin = 0;
-    }
-      
     // match the titleIcon alignment to the title alignment
     CGFloat titleIconPosition = titleFrame.origin.x;
 //    if (self.titleAlignment == NSTextAlignmentCenter) {
@@ -528,6 +523,13 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
 //                    UIUserInterfaceLayoutDirectionRightToLeft)) {
 //      titleIconPosition = CGRectGetMaxX(titleFrame) - titleIconSize.width;
 //    }
+      
+      CGFloat titleTopMargin = MDCDialogContentInsets.top;
+      if (self.isHeadphonesStatsAlert) {
+          titleTopMargin = 0;
+          titleIconPosition = 0;
+      }
+    
     CGRect titleIconFrame = CGRectMake(titleIconPosition, titleTopMargin,
                                        titleIconSize.width, titleIconSize.height);
     self.titleIconImageView.frame = titleIconFrame;
