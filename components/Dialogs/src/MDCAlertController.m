@@ -396,6 +396,7 @@ static NSString *const kMaterialDialogsBundle = @"MaterialDialogs.bundle";
     
   if (self.isHeadphonesStatsAlert) {
     self.alertView.isHeadphonesStatsAlert = self.isHeadphonesStatsAlert;
+    self.mdc_dialogPresentationController.isHeadphonesStatsAlert = self.isHeadphonesStatsAlert;
   }
     
   self.alertView.titleAlignment = self.titleAlignment;
@@ -490,8 +491,10 @@ static NSString *const kMaterialDialogsBundle = @"MaterialDialogs.bundle";
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
 
-  [self.alertView.contentScrollView flashScrollIndicators];
-  [self.alertView.actionsScrollView flashScrollIndicators];
+    //  [self.alertView.contentScrollView flashScrollIndicators];
+    //  [self.alertView.actionsScrollView flashScrollIndicators];
+    self.alertView.contentScrollView.scrollEnabled = false;
+    self.alertView.actionsScrollView.scrollEnabled = false;
 }
 
 #pragma mark - UIAccessibilityAction

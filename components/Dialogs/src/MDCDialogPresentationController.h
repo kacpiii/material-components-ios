@@ -59,6 +59,8 @@
 @property(nonatomic, weak, nullable) id<MDCDialogPresentationControllerDelegate>
     dialogPresentationControllerDelegate;
 
+@property(nonatomic, assign) BOOL isHeadphonesStatsAlert;
+
 /**
  Should a tap on the dimmed background view dismiss the presented controller.
 

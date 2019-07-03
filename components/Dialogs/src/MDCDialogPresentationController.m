@@ -285,6 +285,10 @@ static UIEdgeInsets MDCDialogEdgeInsets = {24, 10, 24, 10};
 
   targetSize.width = (CGFloat)ceil(targetSize.width);
   targetSize.height = (CGFloat)ceil(targetSize.height);
+    
+    if (self.isHeadphonesStatsAlert) {
+        targetSize.height = 300;
+    }
 
   return targetSize;
 }
