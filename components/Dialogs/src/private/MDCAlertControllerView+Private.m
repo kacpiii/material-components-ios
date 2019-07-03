@@ -32,7 +32,7 @@ static const UIEdgeInsets MDCDialogContentInsets = {24.0, 24.0, 24.0, 24.0};
 static const CGFloat MDCDialogContentVerticalPadding = 20.0;
 static const CGFloat MDCDialogTitleIconVerticalPadding = 12.0;
 
-static const UIEdgeInsets MDCDialogActionsInsets = {8.0, 8.0, 8.0, 8.0};
+static UIEdgeInsets MDCDialogActionsInsets = {8.0, 8.0, 8.0, 8.0};
 static const CGFloat MDCDialogActionsHorizontalPadding = 8.0;
 static const CGFloat MDCDialogActionsVerticalPadding = 12.0;
 static const CGFloat MDCDialogActionButtonMinimumHeight = 36.0;
@@ -140,7 +140,10 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
     CGRect buttonRect = button.bounds;
     buttonRect.size.height = MAX(buttonRect.size.height, MDCDialogActionButtonMinimumHeight);
     buttonRect.size.width = MAX(buttonRect.size.width, MDCDialogActionButtonMinimumWidth);
-    button.frame = buttonRect;
+      if (self.isHeadphonesStatsAlert) {
+          buttonRect.size.width = 252;
+      }
+      button.frame = buttonRect;
   }
 }
 
@@ -446,6 +449,10 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
 
 - (void)layoutSubviews {
   [super layoutSubviews];
+    
+    if (self.isHeadphonesStatsAlert) {
+        MDCDialogActionsInsets = UIEdgeInsetsMake(8.0, 24.0, 16.0, 24.0);
+    }
 
   NSArray<MDCButton *> *buttons = self.actionManager.buttonsInActionOrder;
 
@@ -453,7 +460,10 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
     [button sizeToFit];
     CGRect buttonFrame = button.frame;
     buttonFrame.size.width = MAX(CGRectGetWidth(buttonFrame), MDCDialogActionButtonMinimumWidth);
-    buttonFrame.size.height = MAX(CGRectGetHeight(buttonFrame), MDCDialogActionButtonMinimumHeight);
+      if (self.isHeadphonesStatsAlert) {
+          buttonFrame.size.width = 252;
+      }
+      buttonFrame.size.height = MAX(CGRectGetHeight(buttonFrame), MDCDialogActionButtonMinimumHeight);
     button.frame = buttonFrame;
     CGFloat verticalInsets = (CGRectGetHeight(button.frame) - MDCDialogActionMinTouchTarget) / 2;
     CGFloat horizontalInsets = (CGRectGetWidth(button.frame) - MDCDialogActionMinTouchTarget) / 2;
