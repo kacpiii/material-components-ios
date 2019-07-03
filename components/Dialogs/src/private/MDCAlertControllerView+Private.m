@@ -503,6 +503,10 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
 
   CGFloat titleTop =
       MDCDialogContentInsets.top + contentTitleIconVerticalPadding + titleIconSize.height;
+  if (self.isHeadphonesStatsAlert) {
+    titleTop -= 11;
+  }
+    
   CGRect titleFrame =
       CGRectMake(MDCDialogContentInsets.left, titleTop, titleSize.width, titleSize.height);
   CGRect messageFrame = CGRectMake(MDCDialogContentInsets.left,
@@ -528,6 +532,8 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
       if (self.isHeadphonesStatsAlert) {
           titleTopMargin = 0;
           titleIconPosition = 0;
+          
+          self.messageLabel.textAlignment = NSTextAlignmentCenter;
       }
     
     CGRect titleIconFrame = CGRectMake(titleIconPosition, titleTopMargin,
