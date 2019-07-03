@@ -279,7 +279,7 @@ static UIEdgeInsets MDCDialogEdgeInsets = {24, 10, 24, 10};
       targetSize.width = MDCDialogMinimumWidth;
     }
     // targetSize cannot exceed parentSize.
-    targetSize.width = MIN(targetSize.width, parentSize.width);
+    targetSize.width = 300;
     targetSize.height = MIN(targetSize.height, parentSize.height);
   }
 
