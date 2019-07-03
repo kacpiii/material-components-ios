@@ -504,7 +504,7 @@ static const CGFloat MDCDialogMessageOpacity = (CGFloat)0.54;
   CGFloat titleTop =
       MDCDialogContentInsets.top + contentTitleIconVerticalPadding + titleIconSize.height;
   if (self.isHeadphonesStatsAlert) {
-    titleTop -= 11;
+    titleTop -= 12;
   }
     
   CGRect titleFrame =
